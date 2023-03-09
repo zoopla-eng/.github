@@ -17,7 +17,7 @@ jobs:
         run: |
           DEPLOYER=$(git show -s --format='%ae')
           echo "DEPLOYER=${DEPLOYER}" >> $GITHUB_OUTPUT
-      - Name: Report Deploy
+      - name: Report Deploy
         uses: OpsLevel/report-deploy-github-action@v0.4.0
         with:
           integration_url: ${{ secrets.OL_INTEGRATION_URL }}
