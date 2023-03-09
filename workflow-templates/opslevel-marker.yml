@@ -1,0 +1,27 @@
+---
+name: Opslevel Marker
+
+# yamllint disable-line rule:truthy
+on:
+  push:
+    branches: [$default-branch]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v3
+      - name: Get Deployer
+        id: deployer
+        run: |
+          DEPLOYER=$(git show -s --format='%ae')
+          echo "DEPLOYER=${DEPLOYER}" >> $GITHUB_OUTPUT
+      - Name: Report Deploy
+        uses: OpsLevel/report-deploy-github-action@v0.4.0
+        with:
+          integration_url: ${{ secrets.OL_INTEGRATION_URL }}
+          service: service-control-policies
+          description: ${{github.sha}} deployed to $default-branch
+          environment: prod
+          deployer_email: ${{ steps.deployer.outputs.DEPLOYER }}

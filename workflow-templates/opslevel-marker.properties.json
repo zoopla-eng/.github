@@ -1,0 +1,5 @@
+{
+  "name": "Add Opslevel Deploy Marker",
+  "description": "When a PR is merged to the default branch, this workflow will add a deploy marker to Opslevel.",
+  "iconName": "octicon tag"
+}
