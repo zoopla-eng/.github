@@ -1,0 +1,5 @@
+{
+  "name": "Auto Assign Pull Request",
+  "description": "If a PR has an empty assignee list, assign it to the author of the PR",
+  "iconName": "octicon person-add"
+}
