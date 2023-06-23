@@ -1,0 +1,5 @@
+{
+  "name": "Do Mot Merge",
+  "description": "Using this Action, you just apply a label containing the text `do not merge` to your PR, and the PR will be blocked until the label is removed.",
+  "iconName": "octicon tag"
+}
